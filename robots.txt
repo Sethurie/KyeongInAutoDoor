@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kyeong-in-auto-door.vercel.app/sitemap.xml

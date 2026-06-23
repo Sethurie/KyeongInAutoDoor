@@ -164,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('portfolioLightbox');
   const lightboxClose = document.querySelector('.lightbox-close');
   const lightboxCaption = document.querySelector('.lightbox-caption');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxPlaceholder = document.getElementById('lightboxPlaceholder');
   
   document.querySelectorAll('.portfolio-overlay-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -171,6 +173,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = btn.closest('.portfolio-item');
       const title = item.querySelector('.portfolio-title').textContent;
       const category = item.querySelector('.portfolio-cat').textContent;
+      
+      // [시공사례 이미지 연동]
+      // 포트폴리오 아이템에 실제 <img> 태그가 삽입되어 있으면 팝업창에서도 그 이미지를 보여줍니다.
+      const itemImg = item.querySelector('.portfolio-visual-wrapper img');
+      if (itemImg) {
+        if (lightboxImage) {
+          lightboxImage.src = itemImg.src;
+          lightboxImage.style.display = 'block';
+        }
+        if (lightboxPlaceholder) {
+          lightboxPlaceholder.style.display = 'none';
+        }
+      } else {
+        if (lightboxImage) {
+          lightboxImage.src = '';
+          lightboxImage.style.display = 'none';
+        }
+        if (lightboxPlaceholder) {
+          lightboxPlaceholder.style.display = 'flex';
+        }
+      }
       
       lightboxCaption.textContent = `[${category}] ${title} - 시공 상세보기`;
       lightbox.classList.add('active');

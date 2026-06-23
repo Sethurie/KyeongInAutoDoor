@@ -6,36 +6,37 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-tertiary: #f1f5f9;
-  
+
   --text-main: #0f172a;
   --text-muted: #475569;
   --text-light: #94a3b8;
   --text-white: #ffffff;
-  
-  --color-primary: #0284c7; /* Sky blue base */
+
+  --color-primary: #0284c7;
+  /* Sky blue base */
   --color-primary-dark: #0369a1;
   --color-primary-light: #e0f2fe;
-  
+
   --color-blue-gradient: linear-gradient(135deg, #0284c7 0%, #3b82f6 100%);
   --color-blue-gradient-hover: linear-gradient(135deg, #0369a1 0%, #2563eb 100%);
-  
+
   --border-color: #e2e8f0;
-  
+
   /* Typography */
   --font-family: 'Outfit', 'Noto Sans KR', sans-serif;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
   --shadow-blue: 0 10px 20px -3px rgba(2, 132, 199, 0.2);
-  
+
   /* Transitions */
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Layout */
   --header-height: 80px;
   --max-width: 1200px;
@@ -45,7 +46,9 @@
 }
 
 /* --- RESET & GENERAL STYLES --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -84,7 +87,8 @@ img {
   display: block;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -308,7 +312,7 @@ ul, ol {
   .hamburger {
     display: flex;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 0;
@@ -323,16 +327,16 @@ ul, ol {
     gap: 24px;
     transition: var(--transition-normal);
   }
-  
+
   .nav-menu.active {
     right: 0;
   }
-  
+
   .nav-cta {
     width: 100%;
     margin-top: 16px;
   }
-  
+
   .nav-cta .btn {
     width: 100%;
   }
@@ -341,11 +345,11 @@ ul, ol {
   .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  
+
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
@@ -368,11 +372,13 @@ ul, ol {
   left: 0;
   width: 100%;
   height: 100%;
+  /* [사진 등록 안내] 메인 비주얼 배경 이미지를 변경하려면 아래 url('images/hero-bg.jpg') 경로를 새 이미지 파일 경로로 수정해 주세요. */
   /* 그라데이션 오버레이로 글자 가독성 확보 + 배경 이미지(images/hero-bg.jpg) 설정 */
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 35%, rgba(255, 255, 255, 0.7) 65%, rgba(255, 255, 255, 0.2) 100%), 
-              url('images/hero-bg.jpg') no-repeat center center;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 35%, rgba(255, 255, 255, 0.7) 65%, rgba(255, 255, 255, 0.2) 100%),
+    url('images/hero-bg.jpg') no-repeat center center;
   background-size: cover;
-  background-color: #f1f5f9; /* 이미지 폴백 배경색 */
+  background-color: #f1f5f9;
+  /* 이미지 폴백 배경색 */
   z-index: 1;
 }
 
@@ -431,30 +437,30 @@ ul, ol {
 
 @media (max-width: 991px) {
   .hero-bg {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 75%, rgba(255, 255, 255, 0.4) 100%), 
-                url('images/hero-bg.jpg') no-repeat center center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 75%, rgba(255, 255, 255, 0.4) 100%),
+      url('images/hero-bg.jpg') no-repeat center center;
     background-size: cover;
   }
-  
+
   .hero {
     padding-top: 140px;
     padding-bottom: 100px;
     min-height: 80vh;
   }
-  
+
   .hero-content-wrapper {
     max-width: 100%;
     text-align: center;
   }
-  
+
   .hero-badge {
     justify-content: center;
   }
-  
+
   .hero-title {
     font-size: 2.8rem;
   }
-  
+
   .hero-btns {
     justify-content: center;
   }
@@ -464,12 +470,12 @@ ul, ol {
   .hero-title {
     font-size: 2.2rem;
   }
-  
+
   .hero-btns {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .hero-btns .btn {
     width: 100%;
   }
@@ -522,7 +528,7 @@ ul, ol {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 20px;
   }
-  
+
   .stat-item:nth-child(2)::after {
     display: none;
   }
@@ -631,7 +637,8 @@ ul, ol {
 .products-slider-container {
   overflow: hidden;
   width: 100%;
-  padding: 15px 0; /* 카드가 움직일 때 위아래 입체 그림자 짤림 방지 */
+  padding: 15px 0;
+  /* 카드가 움직일 때 위아래 입체 그림자 짤림 방지 */
 }
 
 .products-slider-track {
@@ -642,7 +649,8 @@ ul, ol {
 }
 
 .products-slider-track .product-card {
-  flex: 0 0 calc(50% - 15px); /* 데스크톱에서는 2개씩 보여줌 */
+  flex: 0 0 calc(50% - 15px);
+  /* 데스크톱에서는 2개씩 보여줌 */
   width: calc(50% - 15px);
   margin-bottom: 0;
 }
@@ -708,6 +716,17 @@ ul, ol {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
 }
 
 .product-image-placeholder {
@@ -809,9 +828,10 @@ ul, ol {
   .products-slider-wrapper {
     gap: 10px;
   }
-  
+
   .products-slider-track .product-card {
-    flex: 0 0 100%; /* 태블릿 및 모바일에서는 1개씩 보여줌 */
+    flex: 0 0 100%;
+    /* 태블릿 및 모바일에서는 1개씩 보여줌 */
     width: 100%;
   }
 
@@ -846,7 +866,8 @@ ul, ol {
   transition: var(--transition-normal);
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
   background: var(--color-blue-gradient);
   color: var(--text-white);
   border-color: transparent;
@@ -882,6 +903,17 @@ ul, ol {
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+
+.portfolio-visual-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.portfolio-item:hover .portfolio-visual-wrapper img {
+  transform: scale(1.05);
 }
 
 .portfolio-visual-placeholder {
@@ -1124,7 +1156,7 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  
+
   .contact-info-panel {
     padding-right: 0;
   }
@@ -1134,7 +1166,7 @@ textarea.form-control {
   .contact-form-panel {
     padding: 30px 20px;
   }
-  
+
   .form-group-row {
     grid-template-columns: 1fr;
     gap: 0;
@@ -1404,6 +1436,17 @@ textarea.form-control {
   max-height: 80%;
   position: relative;
   text-align: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--border-radius-md);
+  border: 1px solid #334155;
+  box-shadow: var(--shadow-xl);
+  display: block;
+  margin: 0 auto;
 }
 
 .lightbox-placeholder {
