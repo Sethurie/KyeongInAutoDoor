@@ -718,6 +718,10 @@ ol {
   overflow: hidden;
 }
 
+.product-image:has(img) {
+  cursor: pointer;
+}
+
 .product-image img {
   width: 100%;
   height: 100%;
@@ -727,6 +731,30 @@ ol {
 
 .product-card:hover .product-image img {
   transform: scale(1.05);
+}
+
+.product-image:has(img)::after {
+  content: '\f00e';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 132, 199, 0.4);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: 2;
+}
+
+.product-image:has(img):hover::after {
+  opacity: 1;
 }
 
 .product-image-placeholder {

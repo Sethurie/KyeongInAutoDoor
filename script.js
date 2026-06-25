@@ -160,13 +160,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
-  // 6. Lightbox modal for Portfolio Placeholders
+  // 6. Lightbox modal for Portfolio Placeholders and Product Images
   const lightbox = document.getElementById('portfolioLightbox');
   const lightboxClose = document.querySelector('.lightbox-close');
   const lightboxCaption = document.querySelector('.lightbox-caption');
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxPlaceholder = document.getElementById('lightboxPlaceholder');
   
+  const openLightbox = (src, captionText) => {
+    if (lightboxImage) {
+      lightboxImage.src = src;
+      lightboxImage.style.display = 'block';
+    }
+    if (lightboxPlaceholder) {
+      lightboxPlaceholder.style.display = 'none';
+    }
+    if (lightboxCaption) {
+      lightboxCaption.textContent = captionText;
+    }
+    if (lightbox) {
+      lightbox.classList.add('active');
+    }
+    document.body.classList.add('overflow-hidden');
+  };
+
   document.querySelectorAll('.portfolio-overlay-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -178,13 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 포트폴리오 아이템에 실제 <img> 태그가 삽입되어 있으면 팝업창에서도 그 이미지를 보여줍니다.
       const itemImg = item.querySelector('.portfolio-visual-wrapper img');
       if (itemImg) {
-        if (lightboxImage) {
-          lightboxImage.src = itemImg.src;
-          lightboxImage.style.display = 'block';
-        }
-        if (lightboxPlaceholder) {
-          lightboxPlaceholder.style.display = 'none';
-        }
+        openLightbox(itemImg.src, `[${category}] ${title} - 시공 상세보기`);
       } else {
         if (lightboxImage) {
           lightboxImage.src = '';
@@ -193,11 +204,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightboxPlaceholder) {
           lightboxPlaceholder.style.display = 'flex';
         }
+        lightboxCaption.textContent = `[${category}] ${title} - 시공 상세보기`;
+        lightbox.classList.add('active');
+        document.body.classList.add('overflow-hidden');
       }
-      
-      lightboxCaption.textContent = `[${category}] ${title} - 시공 상세보기`;
-      lightbox.classList.add('active');
-      document.body.classList.add('overflow-hidden');
+    });
+  });
+
+  // Product Images click to open in lightbox
+  document.querySelectorAll('.product-image').forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      const img = wrapper.querySelector('img');
+      if (img) {
+        const card = wrapper.closest('.product-card');
+        const name = card ? card.querySelector('.product-name').textContent : '제품';
+        openLightbox(img.src, `${name} - 상세 제품 이미지`);
+      }
     });
   });
 
