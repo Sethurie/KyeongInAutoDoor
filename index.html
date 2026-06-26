@@ -34,11 +34,6 @@
         <a href="#portfolio" class="nav-link">시공사례</a>
         <a href="#contact" class="nav-link">견적문의</a>
         <a href="#location" class="nav-link">오시는 길</a>
-        <div class="nav-cta">
-          <a href="tel:010-0000-0000" class="btn btn-primary btn-sm" id="callButton">
-            <i class="fas fa-phone-alt"></i> 전화상담
-          </a>
-        </div>
       </nav>
 
       <button class="hamburger" aria-label="메뉴 열기" id="menuToggle">
@@ -320,28 +315,32 @@
         <button class="filter-btn" data-filter="glassdoor" id="filterGlassdoor">강화도어</button>
         <button class="filter-btn" data-filter="folding" id="filterFolding">폴딩도어</button>
         <button class="filter-btn" data-filter="partition" id="filterPartition">유리칸막이</button>
+        <button class="filter-btn" data-filter="colorglass" id="filterColorglass">칼라유리</button>
+        <button class="filter-btn" data-filter="glassboard" id="filterGlassboard">유리칠판</button>
+        <button class="filter-btn" data-filter="systemdoor" id="filterSystemdoor">시스템도어</button>
       </div>
 
-      <div class="portfolio-grid">
+      <div class="portfolio-slider-wrapper" data-reveal>
+        <button class="portfolio-slider-btn prev-btn" id="portPrevBtn" aria-label="이전 시공사례"><i
+            class="fas fa-chevron-left"></i></button>
+
+        <div class="portfolio-slider-container">
+          <div class="portfolio-slider-track" id="portSliderTrack">
         <!-- Item 1 -->
         <div class="portfolio-item" data-category="autodoor" data-reveal>
           <div class="portfolio-visual-wrapper">
-            <!-- [사진 등록 안내] 
-                 예시: <img src="images/portfolio-autodoor-1.jpg" alt="오피스텔 로비 자동문">
-            -->
-            <div class="portfolio-visual-placeholder">
-              <i class="fas fa-door-open"></i>
-              <span class="placeholder-text"><i class="fas fa-image"></i> 오피스텔 로비 자동문</span>
-            </div>
+            <img src="images/autoDoorWorking/autoDoorWorking2.png" alt="알루미늄 양개 자동문">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/autoDoorWorking/autoDoorWorking1.jpg" alt="알루미늄 양개 자동문 2" style="display: none;">
             <div class="portfolio-overlay">
-              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-plus"></i></button>
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
             </div>
           </div>
           <div class="portfolio-details">
             <div class="portfolio-cat">자동문</div>
-            <h3 class="portfolio-title">오피스텔 로비 알루미늄 양개 자동문</h3>
+            <h3 class="portfolio-title">알루미늄 양개 자동문</h3>
             <div class="portfolio-location">
-              <i class="fas fa-check-circle"></i> 시공 완료
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 2장)
             </div>
           </div>
         </div>
@@ -349,22 +348,19 @@
         <!-- Item 2 -->
         <div class="portfolio-item" data-category="glassdoor" data-reveal>
           <div class="portfolio-visual-wrapper">
-            <!-- [사진 등록 안내] 
-                 예시: <img src="images/portfolio-glassdoor-1.jpg" alt="상가 강화유리문">
-            -->
-            <div class="portfolio-visual-placeholder">
-              <i class="fas fa-shield-alt"></i>
-              <span class="placeholder-text"><i class="fas fa-image"></i> 상가 강화유리문</span>
-            </div>
+            <img src="images/temperedGlassWorking/temperedGlass1.jpg" alt="입구 세이프티 강화유리도어">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/temperedGlassWorking/temperedGlass2.jpg" alt="입구 세이프티 강화유리도어 2" style="display: none;">
+            <img src="images/temperedGlassWorking/temperedGlass3.jpg" alt="입구 세이프티 강화유리도어 3" style="display: none;">
             <div class="portfolio-overlay">
-              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-plus"></i></button>
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
             </div>
           </div>
           <div class="portfolio-details">
             <div class="portfolio-cat">강화도어</div>
-            <h3 class="portfolio-title">상가 약국 입구 세이프티 강화유리도어</h3>
+            <h3 class="portfolio-title">입구 세이프티 강화유리도어</h3>
             <div class="portfolio-location">
-              <i class="fas fa-check-circle"></i> 시공 완료
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 3장)
             </div>
           </div>
         </div>
@@ -372,22 +368,23 @@
         <!-- Item 3 -->
         <div class="portfolio-item" data-category="folding" data-reveal>
           <div class="portfolio-visual-wrapper">
-            <!-- [사진 등록 안내] 
-                 예시: <img src="images/portfolio-folding-1.jpg" alt="테라스 카페 폴딩도어">
-            -->
-            <div class="portfolio-visual-placeholder">
-              <i class="fas fa-columns"></i>
-              <span class="placeholder-text"><i class="fas fa-image"></i> 테라스 카페 폴딩도어</span>
-            </div>
+            <img src="images/foldingDoorWorking/foldingDoorWorking2.jpg" alt="아파트용 하부레일 폴딩도어 시공">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/foldingDoorWorking/foldingDoorWorking1.jpg" alt="아파트용 하부레일 폴딩도어 시공 2"
+              style="display: none;">
+            <img src="images/foldingDoorWorking/foldingDoorWorking3.jpg" alt="아파트용 하부레일 폴딩도어 시공 3"
+              style="display: none;">
+            <img src="images/foldingDoorWorking/foldingDoorWorking4.png" alt="아파트용 하부레일 폴딩도어 시공 4"
+              style="display: none;">
             <div class="portfolio-overlay">
-              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-plus"></i></button>
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
             </div>
           </div>
           <div class="portfolio-details">
             <div class="portfolio-cat">폴딩도어</div>
-            <h3 class="portfolio-title">상가 테라스 연결형 단열 폴딩도어 시공</h3>
+            <h3 class="portfolio-title">아파트용 하부레일 폴딩도어 시공</h3>
             <div class="portfolio-location">
-              <i class="fas fa-check-circle"></i> 시공 완료
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 3장)
             </div>
           </div>
         </div>
@@ -395,22 +392,18 @@
         <!-- Item 4 -->
         <div class="portfolio-item" data-category="partition" data-reveal>
           <div class="portfolio-visual-wrapper">
-            <!-- [사진 등록 안내] 
-                 예시: <img src="images/portfolio-partition-1.jpg" alt="오피스 유리칸막이">
-            -->
-            <div class="portfolio-visual-placeholder">
-              <i class="fas fa-th-large"></i>
-              <span class="placeholder-text"><i class="fas fa-image"></i> 오피스 유리칸막이</span>
-            </div>
+            <img src="images/partitionWorking/partitonWorking1.png" alt="프레임 유리칸막이">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/partitionWorking/partitonWorking2.png" alt="프레임 유리칸막이 2" style="display: none;">
             <div class="portfolio-overlay">
-              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-plus"></i></button>
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
             </div>
           </div>
           <div class="portfolio-details">
             <div class="portfolio-cat">유리칸막이</div>
-            <h3 class="portfolio-title">사무실 회의실 블랙 프레임 유리칸막이</h3>
+            <h3 class="portfolio-title">프레임 유리칸막이 시공</h3>
             <div class="portfolio-location">
-              <i class="fas fa-check-circle"></i> 시공 완료
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 2장)
             </div>
           </div>
         </div>
@@ -418,22 +411,20 @@
         <!-- Item 5 -->
         <div class="portfolio-item" data-category="autodoor" data-reveal>
           <div class="portfolio-visual-wrapper">
-            <!-- [사진 등록 안내] 
-                 예시: <img src="images/portfolio-autodoor-2.jpg" alt="아파트 현관 자동문">
-            -->
-            <div class="portfolio-visual-placeholder">
-              <i class="fas fa-door-closed"></i>
-              <span class="placeholder-text"><i class="fas fa-image"></i> 아파트 현관 자동문</span>
-            </div>
+            <img src="images/autoDoorWorking2/autoDoorWorking1.jpg" alt="슬라이딩 자동문(미닫이식 자동문)">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/autoDoorWorking2/autoDoorWorking2.jpg" alt="슬라이딩 자동문(미닫이식 자동문) 2" style="display: none;">
+            <img src="images/autoDoorWorking2/autoDoorWorking3.jpg" alt="슬라이딩 자동문(미닫이식 자동문) 3" style="display: none;">
+            <img src="images/autoDoorWorking2/autoDoorWorking4.jpg" alt="슬라이딩 자동문(미닫이식 자동문) 4" style="display: none;">
             <div class="portfolio-overlay">
-              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-plus"></i></button>
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
             </div>
           </div>
           <div class="portfolio-details">
             <div class="portfolio-cat">자동문</div>
-            <h3 class="portfolio-title">아파트 중문용 3연동 슬림 자동문</h3>
+            <h3 class="portfolio-title">슬라이딩 자동문(미닫이식 자동문)</h3>
             <div class="portfolio-location">
-              <i class="fas fa-check-circle"></i> 시공 완료
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 4장)
             </div>
           </div>
         </div>
@@ -441,25 +432,87 @@
         <!-- Item 6 -->
         <div class="portfolio-item" data-category="folding" data-reveal>
           <div class="portfolio-visual-wrapper">
-            <!-- [사진 등록 안내] 
-                 예시: <img src="images/portfolio-folding-2.jpg" alt="카센터 폴딩도어">
-            -->
-            <div class="portfolio-visual-placeholder">
-              <i class="fas fa-border-all"></i>
-              <span class="placeholder-text"><i class="fas fa-image"></i> 카센터 폴딩도어</span>
-            </div>
+            <img src="images/foldingDoorWorking2/fdDoorWorking1.png" alt="고강도 알루미늄 폴딩도어 시공">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/foldingDoorWorking2/fdDoorWorking2.png" alt="고강도 알루미늄 폴딩도어 시공 2" style="display: none;">
             <div class="portfolio-overlay">
-              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-plus"></i></button>
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
             </div>
           </div>
           <div class="portfolio-details">
             <div class="portfolio-cat">폴딩도어</div>
-            <h3 class="portfolio-title">상가 주차 진입로 고강도 알루미늄 폴딩도어</h3>
+            <h3 class="portfolio-title">고강도 알루미늄 폴딩도어 시공</h3>
             <div class="portfolio-location">
-              <i class="fas fa-check-circle"></i> 시공 완료
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 2장)
             </div>
           </div>
         </div>
+
+        <!-- Item 7 -->
+        <div class="portfolio-item" data-category="colorglass" data-reveal>
+          <div class="portfolio-visual-wrapper">
+            <img src="images/colorGlassWorking/colorGlassWorking1.jpg" alt="인테리어 칼라유리">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/colorGlassWorking/colorGlassWorking2.png" alt="인테리어 칼라유리 2" style="display: none;">
+            <img src="images/colorGlassWorking/colorGlassWorking3.jpg" alt="인테리어 칼라유리 3" style="display: none;">
+            <div class="portfolio-overlay">
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="portfolio-details">
+            <div class="portfolio-cat">칼라유리</div>
+            <h3 class="portfolio-title">인테리어 칼라유리 시공</h3>
+            <div class="portfolio-location">
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 3장)
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="portfolio-item" data-category="glassboard" data-reveal>
+          <div class="portfolio-visual-wrapper">
+            <img src="images/glassBoardWorking/glassBoardWorking1.jpg" alt="초등학교 자석형 무반사 유리칠판 시공">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/glassBoardWorking/glassBoardWorking2.jpg" alt="초등학교 자석형 무반사 유리칠판 시공 2"
+              style="display: none;">
+            <div class="portfolio-overlay">
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="portfolio-details">
+            <div class="portfolio-cat">유리칠판</div>
+            <h3 class="portfolio-title">초등학교 자석형 무반사 유리칠판 시공</h3>
+            <div class="portfolio-location">
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 2장)
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="portfolio-item" data-category="systemdoor" data-reveal>
+          <div class="portfolio-visual-wrapper">
+            <img src="images/systemDoorWorking/systemDoor1.jpg" alt="프리미엄 시스템도어 시공 1">
+            <!-- 추가 상세 사진 (팝업 슬라이더용) -->
+            <img src="images/systemDoorWorking/systemDoor2.jpg" alt="프리미엄 시스템도어 시공 2" style="display: none;">
+            <img src="images/systemDoorWorking/systemDoor3.jpg" alt="프리미엄 시스템도어 시공 3" style="display: none;">
+            <img src="images/systemDoorWorking/systemDoor4.jpg" alt="프리미엄 시스템도어 시공 4" style="display: none;">
+            <div class="portfolio-overlay">
+              <button class="portfolio-overlay-btn" aria-label="상세보기"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="portfolio-details">
+            <div class="portfolio-cat">시스템도어</div>
+            <h3 class="portfolio-title">프리미엄 단열/방음 시스템도어 시공</h3>
+            <div class="portfolio-location">
+              <i class="fas fa-check-circle"></i> 시공 완료 (사진 4장)
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <button class="portfolio-slider-btn next-btn" id="portNextBtn" aria-label="다음 시공사례"><i
+            class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
@@ -545,9 +598,7 @@
             <div class="form-agreement">
               <input type="checkbox" id="agree" required>
               <label for="agree">
-                (필수) <a href="#"
-                  onclick="alert('개인정보처리방침: 작성하신 성함, 연락처 등은 견적 문의 및 답변 연락 용도로만 사용되며 별도로 저장되거나 제공되지 않습니다.'); return false;">개인정보
-                  수집 및 이용 방침</a>에 동의합니다.
+                (필수) <a href="#" id="openPrivacyFormLink">개인정보 수집 및 이용 방침</a>에 동의합니다.
               </label>
             </div>
 
@@ -628,7 +679,6 @@
           <div class="footer-socials">
             <a href="https://blog.naver.com/hung19466" class="footer-social-btn" aria-label="블로그"><i
                 class="fab fa-blogger"></i></a>
-            <a href="#" class="footer-social-btn" aria-label="카카오톡"><i class="fas fa-comment"></i></a>
           </div>
         </div>
 
@@ -647,6 +697,14 @@
         <div>
           <h4 class="footer-title">고객센터 & 정보</h4>
           <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <i class="fas fa-user"></i>
+              <span>대표자: 이흥만</span>
+            </li>
+            <li class="footer-info-item">
+              <i class="fas fa-file-invoice"></i>
+              <span>사업자 등록번호: 341-86-00448</span>
+            </li>
             <li class="footer-info-item">
               <i class="fas fa-phone-alt"></i>
               <span>전화: 010-9889-1946<br>이메일: hung19466@naver.com</span>
@@ -668,8 +726,8 @@
           &copy; 2026 경인자동문. All Rights Reserved.
         </div>
         <div class="footer-policy-links">
-          <a href="#" onclick="alert('이용약관 준비중입니다.'); return false;">이용약관</a>
-          <a href="#" onclick="alert('개인정보처리방침 준비중입니다.'); return false;">개인정보처리방침</a>
+          <a href="#" id="openTermsLink">이용약관</a>
+          <a href="#" id="openPrivacyLink">개인정보처리방침</a>
         </div>
       </div>
     </div>
@@ -680,6 +738,12 @@
   <div class="lightbox" id="portfolioLightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="닫기"><i class="fas fa-times"></i></button>
+
+      <!-- 이전/다음 이미지 슬라이드 버튼 -->
+      <button class="lightbox-prev" aria-label="이전 이미지" style="display: none;"><i
+          class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-next" aria-label="다음 이미지" style="display: none;"><i
+          class="fas fa-chevron-right"></i></button>
 
       <!-- [실제 시공 상세 이미지 영역] 
            시공 사례 카드의 placeholder 대신 <img> 태그가 등록되면 이 태그를 통해 팝업창에서 시공 사진을 띄워줍니다.
@@ -694,6 +758,15 @@
         </p>
       </div>
       <div class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- --- TERMS & PRIVACY MODAL --- -->
+  <div class="lightbox" id="policyModal">
+    <div class="lightbox-content policy-modal-content">
+      <button class="lightbox-close" id="policyModalClose" aria-label="닫기"><i class="fas fa-times"></i></button>
+      <h3 class="policy-modal-title" id="policyModalTitle">이용약관</h3>
+      <div class="policy-modal-body" id="policyModalBody"></div>
     </div>
   </div>
 
