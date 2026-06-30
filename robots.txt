@@ -1,4 +1,24 @@
 User-agent: *
 Allow: /
 
+# 대역폭과 서버 리소스를 낭비시키는 악성 마케팅/스크랩 봇 차단
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# 국내 비즈니스에 영향이 없는 해외 검색 봇 차단 (중국, 러시아 등)
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
 Sitemap: https://kyeongindoor.com/sitemap.xml
