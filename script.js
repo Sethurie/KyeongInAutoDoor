@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(updatePortSlider, 200);
   }
 
-  // 5. Contact Form Simulation (Custom Toast Notification)
+  // 5. Contact Form (Google Forms Backend Integration)
   const contactForm = document.getElementById('inquiryForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -221,6 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const name = document.getElementById('name').value;
       const phone = document.getElementById('phone').value;
+      const doorTypeSelect = document.getElementById('doorType');
+      const doorTypeLabel = doorTypeSelect.options[doorTypeSelect.selectedIndex].text;
+      const message = document.getElementById('message').value;
       const agreement = document.getElementById('agree').checked;
 
       if (!name || !phone) {
@@ -233,18 +236,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate sending
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 전송 중...';
 
-      setTimeout(() => {
+      // Google Form Action URL
+      const actionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfbqyjRGjoNgSS9-kFG3XJr95v9x8swyrqYFKZclLI9WczGYA/formResponse';
+
+      // URLSearchParams를 활용하여 폼 데이터를 x-www-form-urlencoded 형식으로 빌드
+      const formData = new URLSearchParams();
+      formData.append('entry.358238006', name);         // 이름
+      formData.append('entry.2046320657', phone);        // 연락처
+      formData.append('entry.1311339373', doorTypeLabel); // 제품명
+      formData.append('entry.1270037934', message);       // 내용 문항 구성
+
+      // 구글 폼에 백그라운드로 데이터 전송 (mode: 'no-cors' 설정 필수)
+      fetch(actionUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData
+      })
+      .then(() => {
         showToast(`${name} 고객님, 견적 및 상담 문의가 성공적으로 접수되었습니다.`, 'success');
         contactForm.reset();
+      })
+      .catch(error => {
+        console.error('Google Form submission error:', error);
+        showToast('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.', 'error');
+      })
+      .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
-      }, 1500);
+      });
     });
   }
 
