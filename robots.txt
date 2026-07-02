@@ -1,24 +1,21 @@
-User-agent: *
+# 1. 허용할 핵심 검색 로봇 지정 (구글, 네이버, 다음, 야후/빙)
+User-agent: Googlebot
 Allow: /
 
-# 대역폭과 서버 리소스를 낭비시키는 악성 마케팅/스크랩 봇 차단
-User-agent: AhrefsBot
-Disallow: /
+User-agent: NaverBot
+Allow: /
 
-User-agent: SemrushBot
-Disallow: /
+User-agent: Yeti
+Allow: /
 
-User-agent: MJ12bot
-Disallow: /
+User-agent: Daumoa
+Allow: /
 
-User-agent: PetalBot
-Disallow: /
+User-agent: bingbot
+Allow: /
 
-# 국내 비즈니스에 영향이 없는 해외 검색 봇 차단 (중국, 러시아 등)
-User-agent: Baiduspider
-Disallow: /
-
-User-agent: YandexBot
+# 2. 위에 명시되지 않은 그 외의 모든 해외 봇 및 마케팅 스크랩 봇 차단
+User-agent: *
 Disallow: /
 
 Sitemap: https://kyeongindoor.com/sitemap.xml

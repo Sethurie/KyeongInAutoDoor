@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(wp-admin|wp-login|xmlrpc|\\.env|\\.git|\\.php|\\.sql|admin|login|config)(.*)",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

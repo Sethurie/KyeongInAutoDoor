@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>페이지를 찾을 수 없습니다 (404) - 경인자동문</title>
+  
+  <!-- FontAwesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --color-primary: #0284c7;
+      --color-blue-gradient: linear-gradient(135deg, #0284c7 0%, #3b82f6 100%);
+      --color-blue-gradient-hover: linear-gradient(135deg, #0369a1 0%, #2563eb 100%);
+      --font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+      --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-secondary);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    .error-container {
+      background: var(--bg-primary);
+      max-width: 600px;
+      width: 100%;
+      padding: 50px 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--color-blue-gradient);
+    }
+
+    .logo-area {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 32px;
+      height: auto;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .logo-text span {
+      color: var(--color-primary);
+    }
+
+    .illustration {
+      font-size: 80px;
+      background: var(--color-blue-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+      display: inline-block;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .error-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-main);
+      word-break: keep-all;
+    }
+
+    .error-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 35px;
+      word-break: keep-all;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-normal);
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .btn-primary {
+      background: var(--color-blue-gradient);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-blue-gradient-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .footer-links {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 480px) {
+      .error-container {
+        padding: 40px 20px;
+      }
+      .error-title {
+        font-size: 1.5rem;
+      }
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="error-container">
+    <!-- 로고 영역 -->
+    <a href="/" class="logo-area">
+      <img src="images/icon.png" alt="경인자동문 로고" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">경인<span>자동문</span></div>
+    </a>
+
+    <!-- 아이콘 애니메이션 -->
+    <div class="illustration">
+      <i class="fas fa-compass-drafting"></i>
+    </div>
+
+    <!-- 타이틀 및 메세지 -->
+    <h1 class="error-title">페이지를 찾을 수 없습니다</h1>
+    <p class="error-desc">
+      주소가 잘못 입력되었거나 변경되어 요청하신 페이지에 접근할 수 없습니다.<br>
+      아래 버튼을 눌러 안전하게 홈으로 이동해 주세요.
+    </p>
+
+    <!-- 주요 동작 버튼 -->
+    <div class="btn-group">
+      <a href="/" class="btn btn-primary">
+        <i class="fas fa-home"></i> 메인페이지로 이동
+      </a>
+      <a href="javascript:history.back();" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> 이전 페이지로 돌아가기
+      </a>
+    </div>
+
+    <!-- 퀵 링크 내비게이션 -->
+    <div class="footer-links">
+      <a href="/#about">회사소개</a>
+      <a href="/#products">제품소개</a>
+      <a href="/#portfolio">시공사례</a>
+      <a href="/#contact">견적문의</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
